@@ -1,0 +1,10 @@
+# Solver output - regenerate by running the case
+/[1-9]*/
+/0.[0-9]*/
+/processor*/
+/postProcessing/
+log.*
+
+# Generated mesh (rebuild from the .geo with gmsh + gmshToFoam)
+/constant/polyMesh/
+*.msh

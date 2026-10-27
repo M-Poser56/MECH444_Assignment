@@ -1,0 +1,38 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2606                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Single place to set the freestream / reference conditions.
+// Included by the 0/ fields and by system/forceCoeffs.
+//
+// Geometry axes (FluidsProject.STEP, metres):
+//   x : longitudinal, nose fairing at x ~ 0, rear fairing at x ~ -1.68
+//   y : lateral (0 -> 1.31)
+//   z : vertical, ground at z = 0
+// The kart drives in +x, so the air approaches from +x and flows in -x.
+
+// Freestream
+Umag            20;                     // [m/s]  PLACEHOLDER - set to the study speed
+Ux              #eval{ -$Umag };        // flow is in -x
+nuInf           1.5e-5;                 // [m^2/s] air, must match constant/transportProperties
+
+// Inlet turbulence
+turbIntensity   0.01;                   // [-]  1 %
+turbLength      0.1;                    // [m]  turbulent length scale
+
+kInlet          #eval{ 1.5*sqr($Umag*$turbIntensity) };
+epsilonInlet    #eval{ pow(0.09, 0.75)*pow($kInlet, 1.5)/$turbLength };
+omegaInlet      #eval{ sqrt($kInlet)/(pow(0.09, 0.25)*$turbLength) };
+nuTildaInlet    #eval{ 3*$nuInf };
+
+// Force coefficient reference values
+Aref            0.56;                   // [m^2] PLACEHOLDER - bbox frontal area of nose fairing (1.31 x 0.43)
+lRef            1.69;                   // [m]   overall length, nose to rear fairing
+CofR            (-0.845 0.655 0);       // [m]   moment reference: mid-length, centreline, ground
+
+// ************************************************************************* //
