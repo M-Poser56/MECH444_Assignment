@@ -14,14 +14,14 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
+//purpose of this file is to be run after gmshToFoam, and it will turn all of the boundary type "patches"
+// into boundary type "wall". This enables wall functions to work. So, all bodies in which we want to have
+//wall functions be present, need to be changed in this file. That right now is just our kart, or all faces in the
+// 'body' list
+
 boundary
 {
-    frontAndBack
-    {
-        type            empty;
-    }
-
-    airfoil
+    body
     {
         type            wall;
     }    

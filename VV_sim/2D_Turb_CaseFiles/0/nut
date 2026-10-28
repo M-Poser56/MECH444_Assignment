@@ -34,7 +34,7 @@ boundaryField
     }
     airfoil
     {
-        type            nutLowReWallFunction;
+        type            nutkWallFunction; //standard wall function, in assignment 4 we saw this made a difference
         value           $internalField;
     }
     "(top|bottom)"
@@ -42,9 +42,9 @@ boundaryField
         type            calculated;
         value           $internalField;
     }
-    frontAndBack
+    sides
     {
-        type            empty; 
+        type            zeroGradient; 
     }
 }
 

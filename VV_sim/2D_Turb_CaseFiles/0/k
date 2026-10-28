@@ -18,7 +18,7 @@ FoamFile
 
 dimensions      [0 2 -2 0 0 0 0];
 
-internalField   uniform 0.00034;
+internalField   uniform 1.5; //see calculations
 
 boundaryField
 {
@@ -31,17 +31,17 @@ boundaryField
     {
         type            zeroGradient;
     }
-    airfoil
+    body
     {
-        type            kqRWallFunction;
+        type            kqRWallFunction; //default k epsilon model wall function
     }
     "(top|bottom)"
     {
         type            zeroGradient;
     }
-    frontAndBack
+    sides
     {
-        type            empty;
+        type            zeroGradient; //3D
     }
 }
 

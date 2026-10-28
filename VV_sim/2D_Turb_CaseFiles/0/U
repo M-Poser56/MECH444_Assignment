@@ -18,11 +18,9 @@ FoamFile
 
 dimensions      [0 1 -1 0 0 0 0];
 
-alpha  0;
-ux     #eval{ 1.5*cos(degToRad($alpha)) };
-uy     #eval{ 1.5*sin(degToRad($alpha)) }; 
+ux  14; //14m/s is ~ 50km/h
 
-internalField   uniform ($ux $uy 0);
+internalField   uniform ($ux 0 0);
 
 boundaryField
 {
@@ -35,17 +33,17 @@ boundaryField
     {
         type            zeroGradient;
     }
-    airfoil
+    body //this is the kart fairing surfaces
     {
         type            noSlip;
     }
     "(top|bottom)" 
     {
-        type            zeroGradient;
+        type            zeroGradient; //double check this, but it's fine for now. Don't care about ground effect
     }
-    frontAndBack
+    sides
     {
-        type            empty;
+        type            zeroGradient; //I had to change this from the airfoil example, makes it 3D
     }
 }
 

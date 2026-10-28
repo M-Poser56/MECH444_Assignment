@@ -15,7 +15,7 @@ FoamFile
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 simulationType      RAS;
-
+//basic example shown in class I'll leave this
 RAS
 {
     RASModel        kEpsilon;

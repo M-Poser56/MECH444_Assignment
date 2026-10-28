@@ -14,6 +14,8 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
+//mess with tolerances here as needed, part of the sensitivity analysis
+
 solvers
 {
     p

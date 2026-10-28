@@ -18,7 +18,7 @@ FoamFile
 
 dimensions      [0 2 -3 0 0 0 0];
 
-internalField   uniform 6e-6;
+internalField   uniform 1.76; //see calculations
 
 boundaryField
 {
@@ -31,7 +31,7 @@ boundaryField
     {
         type            zeroGradient;
     }
-    airfoil
+    body
     {
         type            epsilonWallFunction;
         value           $internalField;
@@ -40,9 +40,9 @@ boundaryField
     {
         type            zeroGradient;
     }
-    frontAndBack
+    sides
     {
-        type            empty;
+        type            zeroGradient; //makes it 3D
     }
 }
 

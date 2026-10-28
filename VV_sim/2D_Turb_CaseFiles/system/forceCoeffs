@@ -6,6 +6,8 @@
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
 
+//need to edit this file, retrieve the Cd and Cf for the body faces
+
 forceCoeffs
 {
     type            forceCoeffs;
@@ -17,26 +19,18 @@ forceCoeffs
 
     log             no;
 
-    alpha             0;           // Angle of attack
-    magUInf         1.5;         // Freestream velocity
-    lRef            1.0;         // Chord length
-    Aref            #eval{ $lRef*0.01 };  // Chord length times span
+    magUInf         14;         // Freestream velocity, matches 0/U for us
+    lRef            1.34;       //same characteristic length listed in geo file
+    //this needs to be changed, front facing area of the Kart Fairings
+    Aref            0.7369;  // Approximated front facing area - 2rear bumper area (front + back bumper), and the steering column guard approximated from 0.49*0.41m
 
-    patches         (airfoil);
-    rho             rhoInf;      // Indicates incompressible
-    rhoInf          1;           // Required when rho = rhoInf
-    liftDir         (
-                        #eval{-sin(degToRad($alpha))} 
-                        #eval{cos(degToRad($alpha))}
-		        0
-                    );
-    dragDir         (
-                        #eval{cos(degToRad($alpha))} 
-                        #eval{sin(degToRad($alpha))}
-		        0
-                    );
-    CofR            (0.25 0 0);  // Aerodynamic center point
-    pitchAxis       (0 0 1);
+    patches         (body); //our kart fairing faces
+    rho             rhoInf;      // Indicates incompressible (kept from naca case files)
+    rhoInf          1;           // Required when rho = rhoInf (kept from naca case files)
+    
+    dragDir         (1 0 0);    //freestream flow is in the +x direction
+    liftDir         (0 0 -1);    //we are expecting downforce, so 'lift' vector points in -z direction
+    CofR            (0 0 0);    //Kart translated to center of file due to step file CAD offset, this is our Aerodynamic center
 }
 
 
