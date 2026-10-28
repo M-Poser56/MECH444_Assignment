@@ -1,0 +1,26 @@
+# The shell script start with the "shebang" symbol, #!, invoking a proper shel (in this case a Bourne shell)
+#!/bin/sh  
+
+# Run from the same directory where the script is located. 
+cd ${0%/*} || exit 1 
+
+# rename 0 directory to save it.
+mv 0 zeroDir 2>/dev/null 
+# some tutorial cases contain 0.orig directory in the initial setup.
+mv 0.orig zeroDir.orig 2>/dev/null
+
+# delete all directories that start with a digit. The error output is absorbed by redirection to a special /dev/null
+# "nothing device" 
+rm -r ./[0-9]* 2>/dev/null
+
+# delete postProcessing directory and log files
+rm -r ./postProcessing 2>/dev/null
+rm log.* 2>/dev/null
+
+# restore 0 directory and 0.orig (if that one exists)
+mv zeroDir 0 2>/dev/null 
+mv zeroDir.orig 0.orig 2>/dev/null 
+
+echo 'Case cleaned!'
+#------------------------------------------------------------------------------
+
