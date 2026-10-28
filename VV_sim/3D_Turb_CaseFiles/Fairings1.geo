@@ -48,7 +48,7 @@ bodyS() -= {inlet(), outlet(), top(), bottom(), side1(), side2()};
 
 //basic global mesh size configurations, this determines the certain regions and cell size stepping based on distance from the kart
 Mesh.MeshSizeMax = 0.5*L;
-Mesh.MeshSizeFromCurvature = 30;      // lower than 81: 3D cell count explodes
+Mesh.MeshSizeFromCurvature = 30;      
 Mesh.MeshSizeExtendFromBoundary = 0;
 Mesh.MeshSizeFromPoints = 0;
 
@@ -58,13 +58,13 @@ Field[1].Sampling = 100;
 
 Field[2] = Threshold;                 // fine near body, coarse far away
 Field[2].InField = 1;
-Field[2].SizeMin = 0.35*L; //alter size to reduce cells
+Field[2].SizeMin = 0.02*L; //alter size to reduce cells
 Field[2].SizeMax = 0.5*L;
 Field[2].DistMin = 0.02*L;
-Field[2].DistMax = 1.0*L;
+Field[2].DistMax = 1.5*L;
 
 Field[3] = Box;                       // wake refinement, now with Z limits
-Field[3].VIn = 0.35*L;  Field[3].VOut = 0.5*L; //alter size to reduce cells
+Field[3].VIn = 0.08*L;  Field[3].VOut = 0.5*L; //alter size to reduce cells
 Field[3].XMin = -1*L;   Field[3].XMax = 5*L;
 Field[3].YMin = -1*L;   Field[3].YMax = 1*L;
 Field[3].ZMin = -1*L;   Field[3].ZMax = 1*L;
@@ -88,8 +88,8 @@ Physical Surface("body")  = {bodyS()};
 
 
 //our mesh algorithm and cell shaping, final generation steps for gmsh -3 to do its thang
-Mesh.Algorithm   = 11;    // see week 4 intro to meshing slides
-Mesh.Algorithm3D = 10;   // HXT (fast, parallel); 1 = Delaunay if it complains
+Mesh.Algorithm   = 6;    // see week 4 intro to meshing slides
+Mesh.Algorithm3D = 10;   //for the volume, while above step controls the meshing for faces
 Mesh.Optimize = 1;
 Mesh.OptimizeNetgen = 1;
 Mesh.MshFileVersion = 2.2;   // safest format for gmshToFoam
