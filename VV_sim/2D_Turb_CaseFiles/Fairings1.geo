@@ -80,7 +80,7 @@ Physical Surface("bottom")= {bottom()};
 Physical Surface("sides") = {side1(), side2()};
 Physical Surface("body")  = {bodyS()};
 
-Mesh.Algorithm   = 6;    // Frontal-Delaunay for surfaces
+Mesh.Algorithm   = 11;    // see week 4 intro to meshing slides
 Mesh.Algorithm3D = 10;   // HXT (fast, parallel); 1 = Delaunay if it complains
 Mesh.Optimize = 1;
 Mesh.OptimizeNetgen = 1;
