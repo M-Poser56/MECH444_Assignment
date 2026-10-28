@@ -32,7 +32,7 @@ boundaryField
         type            calculated;
         value           $internalField;
     }
-    airfoil
+    body
     {
         type            nutkWallFunction; //standard wall function, in assignment 4 we saw this made a difference
         value           $internalField;
