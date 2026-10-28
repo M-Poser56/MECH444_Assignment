@@ -1,6 +1,6 @@
 SetFactory("OpenCASCADE");
 Geometry.OCCTargetUnit = "M"; // Convert mm to m
-body() = ShapeFromFile("FluidsProject.step");
+body() = ShapeFromFile("FluidsProject_5.step");
 
 L = 1.34;  //characteristic length, bumper width for 1.0 model
 
@@ -47,7 +47,12 @@ bodyS() -= {inlet(), outlet(), top(), bottom(), side1(), side2()};
 
 
 //basic global mesh size configurations, this determines the certain regions and cell size stepping based on distance from the kart
-Mesh.MeshSizeMax = 0.2*L;
+//FAR-FIELD COARSENING: the far-field cell size is capped in THREE places, and all three must agree or the
+//smallest one wins (Field[4] takes the Min): Mesh.MeshSizeMax, Field[2].SizeMax, and Field[3].VOut.
+//All three were 0.2*L (27 cm); now 0.5*L (67 cm). Tested: 1.76M -> 1.18M tets, cells within 10 cm of the
+//kart unchanged (~395k), checkMesh OK. Going much coarser saves little (thin 0.536 m gap under the kart
+//limits growth) and big inlet cells add numerical diffusion to the incoming flow/turbulence.
+Mesh.MeshSizeMax = 0.5*L;             // was 0.2*L - global ceiling, no cell anywhere can be bigger than this
 Mesh.MeshSizeFromCurvature = 30;      
 Mesh.MeshSizeExtendFromBoundary = 0;
 Mesh.MeshSizeFromPoints = 0;
@@ -59,12 +64,15 @@ Field[1].Sampling = 100;
 Field[2] = Threshold;                 // fine near body, coarse far away
 Field[2].InField = 1;
 Field[2].SizeMin = 0.02*L; //alter size to reduce cells
-Field[2].SizeMax = 0.2*L;
+Field[2].SizeMax = 0.5*L;             // was 0.2*L - size reached far from the body (applies everywhere past DistMax)
 Field[2].DistMin = 0.02*L;
-Field[2].DistMax = 1.5*L;
+Field[2].DistMax = 4*L;               // was 1.5*L - moved out with SizeMax so cells still grow gradually
+                                      // (~same growth rate as before, about 12% per cell)
 
 Field[3] = Box;                       // wake refinement, now with Z limits
-Field[3].VIn = 0.08*L;  Field[3].VOut = 0.2*L; //alter size to reduce cells
+Field[3].VIn = 0.08*L;  Field[3].VOut = 0.5*L; //alter size to reduce cells
+                                      // VOut was 0.2*L - a Box field applies VOut to the WHOLE domain outside the box,
+                                      // so it has to match the far-field size above or it caps everything at VOut
 Field[3].XMin = -1*L;   Field[3].XMax = 5*L;
 Field[3].YMin = -1*L;   Field[3].YMax = 1*L;
 Field[3].ZMin = -1*L;   Field[3].ZMax = 1*L;

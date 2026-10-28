@@ -23,48 +23,48 @@ FoamFile
     {
         type            wall;
         physicalType    patch;
-        nFaces          77738;
-        startFace       3096464;
+        nFaces          106688;
+        startFace       2294795;
     }
 
     inlet
     {
         type            patch;
         physicalType    patch;
-        nFaces          3192;
-        startFace       3174202;
+        nFaces          529;
+        startFace       2401483;
     }
 
     sides
     {
         type            patch;
         physicalType    patch;
-        nFaces          12716;
-        startFace       3177394;
+        nFaces          2082;
+        startFace       2402012;
     }
 
     top
     {
         type            patch;
         physicalType    patch;
-        nFaces          11626;
-        startFace       3190110;
+        nFaces          1870;
+        startFace       2404094;
     }
 
     bottom
     {
         type            patch;
         physicalType    patch;
-        nFaces          20100;
-        startFace       3201736;
+        nFaces          10015;
+        startFace       2405964;
     }
 
     outlet
     {
         type            patch;
         physicalType    patch;
-        nFaces          3192;
-        startFace       3221836;
+        nFaces          518;
+        startFace       2415979;
     }
 
 )
