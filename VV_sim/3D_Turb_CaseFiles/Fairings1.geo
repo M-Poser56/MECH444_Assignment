@@ -5,9 +5,9 @@ body() = ShapeFromFile("FluidsProject_5.step");
 L = 1.34;  //characteristic length, bumper width for 1.0 model
 
 //basic x, y, and z computational limits. These we can increase/decrease based on computational mesh sensitivity analysis
-xmin = -5*L; xmax = 15*L;
-ymin = -5*L; ymax =  5*L;
-zmin = -0.4*L; zmax =  5*L;
+xmin = -2.5*L; xmax = 3.5*L;
+ymin = -2*L; ymax =  2*L;
+zmin = -0.4*L; zmax =  1.75*L;
 
 // Find the body's center from its bounding box
 bb() = BoundingBox Volume{body(0)};

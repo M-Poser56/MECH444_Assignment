@@ -5,8 +5,8 @@ if (ARGC < 1) {
 }
 coeffile = ARG1
 
-set title "Cd and Cl vs Time"
-set xlabel "Time"
+set title "Cd and Cl vs Iterations"
+set xlabel "Iterations"
 set ylabel "Coefficient"
 set grid
 set key outside
