@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 # DATA - replace these placeholder values with your own
 # ---------------------------------------------------------------------------
 x = [1, 2, 3, 4, 5]                          # configurations
-x_labels = ["Very\nCoarse", "Coarse", "Intermediate", "Fine", "Very\nFine"]         # tick labels (rename if desired)
+x_labels = ["(1) Very\nCoarse", "(2) Coarse", "(3) Intermediate", "(4) Fine", "(5) Very\nFine"]         # tick labels (rename if desired)
 
 y1 = [0.73, 0.75, 0.76, 0.78, 0.79]         # dataset 1 values
 y1_err = [0.04, 0.03, 0.025, 0.02, 0.005] # dataset 1 y-uncertainty (+/-)
@@ -25,13 +25,13 @@ label2 = "Coefficient of Downforce (Cl)"
 # PLOT SETTINGS
 # ---------------------------------------------------------------------------
 title = "Mesh Sensitivity Analysis\n Cd & Cl vs. Mesh Configurations"
-xlabel = "Configuration"
-ylabel = "Quantity [units]"
+xlabel = "Mesh Configuration"
+ylabel = "Coefficient Value (Dimensionless)"
 
 color1 = "#2a78d6"   # blue
-color2 = "#eb6834"   # orange
+color2 = "#eb34c3"   # magenta
 
-x_offset = 0.06       # horizontal nudge so overlapping error bars stay readable (0 to disable)
+x_offset = 0.00       # horizontal nudge so overlapping error bars stay readable (0 to disable)
 
 output_file = "MeshSensitivity_plot.png"
 dpi = 300
