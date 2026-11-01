@@ -53,12 +53,7 @@ boundaryField
         type            processor;
         value           uniform 0.0294;
     }
-    procBoundary6to2
-    {
-        type            processor;
-        value           uniform 0.0294;
-    }
-    procBoundary6to4
+    procBoundary6to1
     {
         type            processor;
         value           uniform 0.0294;

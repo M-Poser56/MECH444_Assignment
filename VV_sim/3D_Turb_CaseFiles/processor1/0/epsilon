@@ -18,19 +18,19 @@ FoamFile
 
 dimensions      [0 2 -3 0 0 0 0];
 
-internalField   uniform 0.519;
+internalField   uniform 5.19;
 
 boundaryField
 {
     body
     {
         type            epsilonWallFunction;
-        value           uniform 0.519;
+        value           uniform 5.19;
     }
     inlet
     {
         type            fixedValue;
-        value           nonuniform List<scalar> 0;
+        value           uniform 5.19;
     }
     sides
     {
@@ -51,22 +51,32 @@ boundaryField
     procBoundary1to0
     {
         type            processor;
-        value           uniform 0.519;
+        value           uniform 5.19;
     }
     procBoundary1to2
     {
         type            processor;
-        value           uniform 0.519;
+        value           uniform 5.19;
     }
     procBoundary1to3
     {
         type            processor;
-        value           uniform 0.519;
+        value           uniform 5.19;
     }
-    procBoundary1to4
+    procBoundary1to5
     {
         type            processor;
-        value           uniform 0.519;
+        value           uniform 5.19;
+    }
+    procBoundary1to6
+    {
+        type            processor;
+        value           uniform 5.19;
+    }
+    procBoundary1to7
+    {
+        type            processor;
+        value           uniform 5.19;
     }
 }
 

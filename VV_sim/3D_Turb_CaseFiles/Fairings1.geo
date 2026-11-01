@@ -52,7 +52,7 @@ bodyS() -= {inlet(), outlet(), top(), bottom(), side1(), side2()};
 //All three were 0.2*L (27 cm); now 0.5*L (67 cm). Tested: 1.76M -> 1.18M tets, cells within 10 cm of the
 //kart unchanged (~395k), checkMesh OK. Going much coarser saves little (thin 0.536 m gap under the kart
 //limits growth) and big inlet cells add numerical diffusion to the incoming flow/turbulence.
-Mesh.MeshSizeMax = 0.5*L;             // was 0.2*L - global ceiling, no cell anywhere can be bigger than this
+Mesh.MeshSizeMax = 0.6*L;             // was 0.2*L - global ceiling, no cell anywhere can be bigger than this
 Mesh.MeshSizeFromCurvature = 30;      
 Mesh.MeshSizeExtendFromBoundary = 0;
 Mesh.MeshSizeFromPoints = 0;
@@ -63,14 +63,14 @@ Field[1].Sampling = 100;
 
 Field[2] = Threshold;                 // fine near body, coarse far away
 Field[2].InField = 1;
-Field[2].SizeMin = 0.02*L; //alter size to reduce cells
-Field[2].SizeMax = 0.5*L;             // was 0.2*L - size reached far from the body (applies everywhere past DistMax)
+Field[2].SizeMin = 0.03*L; //alter size to reduce cells
+Field[2].SizeMax = 0.6*L;             // was 0.2*L - size reached far from the body (applies everywhere past DistMax)
 Field[2].DistMin = 0.02*L;
 Field[2].DistMax = 4*L;               // was 1.5*L - moved out with SizeMax so cells still grow gradually
                                       // (~same growth rate as before, about 12% per cell)
 
 Field[3] = Box;                       // wake refinement, now with Z limits
-Field[3].VIn = 0.08*L;  Field[3].VOut = 0.5*L; //alter size to reduce cells
+Field[3].VIn = 0.2*L;  Field[3].VOut = 0.6*L; //alter size to reduce cells
                                       // VOut was 0.2*L - a Box field applies VOut to the WHOLE domain outside the box,
                                       // so it has to match the far-field size above or it caps everything at VOut
 Field[3].XMin = -1*L;   Field[3].XMax = 5*L;
@@ -97,8 +97,8 @@ Field[5].Sampling = 200;              // points per curve used to measure distan
 
 Field[6] = Threshold;                 // turns Field 5's distance into a cell size, same idea as Field[2]
 Field[6].InField = 5;
-Field[6].SizeMin = 0.003;             // 3 mm cells at the edges -> ~3 cells across the 1 cm bumper
-Field[6].SizeMax = 0.02*L;            // grows back to the near-body size used in Field[2]
+Field[6].SizeMin = 0.015;             // 3 mm cells at the edges -> ~3 cells across the 1 cm bumper
+Field[6].SizeMax = 0.03*L;            // grows back to the near-body size used in Field[2]
 Field[6].DistMin = 0.005;             // within 5 mm of an edge, use SizeMin
 Field[6].DistMax = 0.10;              // between 5 mm and 10 cm, size grows linearly (~25% per cell, smooth for tets)
 Field[6].StopAtDistMax = 1;           // IMPORTANT: beyond DistMax this field stops setting a size. Without this,
