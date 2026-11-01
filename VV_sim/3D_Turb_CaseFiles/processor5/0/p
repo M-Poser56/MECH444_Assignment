@@ -45,17 +45,7 @@ boundaryField
     outlet
     {
         type            fixedValue;
-        value           uniform 0;
-    }
-    procBoundary5to1
-    {
-        type            processor;
-        value           uniform 0;
-    }
-    procBoundary5to2
-    {
-        type            processor;
-        value           uniform 0;
+        value           nonuniform List<scalar> 0;
     }
     procBoundary5to4
     {

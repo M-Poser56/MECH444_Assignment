@@ -62,6 +62,16 @@ boundaryField
         type            processor;
         value           uniform 0;
     }
+    procBoundary3to4
+    {
+        type            processor;
+        value           uniform 0;
+    }
+    procBoundary3to7
+    {
+        type            processor;
+        value           uniform 0;
+    }
 }
 
 

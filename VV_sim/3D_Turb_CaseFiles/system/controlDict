@@ -20,9 +20,9 @@ startFrom       latestTime;
 
 startTime       0;
 
-stopAt          writeNow;
+stopAt          endTime;
 
-endTime         1100;
+endTime         235;
 
 deltaT          1;
 

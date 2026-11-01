@@ -63,7 +63,7 @@ Field[1].Sampling = 100;
 
 Field[2] = Threshold;                 // fine near body, coarse far away
 Field[2].InField = 1;
-Field[2].SizeMin = 0.03*L; //alter size to reduce cells
+Field[2].SizeMin = 0.0225*L; //alter size to reduce cells
 Field[2].SizeMax = 0.6*L;             // was 0.2*L - size reached far from the body (applies everywhere past DistMax)
 Field[2].DistMin = 0.02*L;
 Field[2].DistMax = 4*L;               // was 1.5*L - moved out with SizeMax so cells still grow gradually
@@ -97,7 +97,7 @@ Field[5].Sampling = 200;              // points per curve used to measure distan
 
 Field[6] = Threshold;                 // turns Field 5's distance into a cell size, same idea as Field[2]
 Field[6].InField = 5;
-Field[6].SizeMin = 0.015;             // 3 mm cells at the edges -> ~3 cells across the 1 cm bumper
+Field[6].SizeMin = 0.006;             // 3 mm cells at the edges -> ~3 cells across the 1 cm bumper
 Field[6].SizeMax = 0.03*L;            // grows back to the near-body size used in Field[2]
 Field[6].DistMin = 0.005;             // within 5 mm of an edge, use SizeMin
 Field[6].DistMax = 0.10;              // between 5 mm and 10 cm, size grows linearly (~25% per cell, smooth for tets)

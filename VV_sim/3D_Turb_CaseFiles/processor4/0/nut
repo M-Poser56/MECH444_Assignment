@@ -25,12 +25,12 @@ boundaryField
     body
     {
         type            nutkWallFunction;
-        value           uniform 0;
+        value           nonuniform List<scalar> 0;
     }
     inlet
     {
         type            calculated;
-        value           nonuniform List<scalar> 0;
+        value           uniform 0;
     }
     sides
     {
@@ -39,7 +39,7 @@ boundaryField
     top
     {
         type            calculated;
-        value           nonuniform List<scalar> 0;
+        value           uniform 0;
     }
     bottom
     {
@@ -49,19 +49,29 @@ boundaryField
     outlet
     {
         type            calculated;
-        value           nonuniform List<scalar> 0;
+        value           uniform 0;
     }
     procBoundary4to0
     {
         type            processor;
         value           uniform 0;
     }
-    procBoundary4to2
+    procBoundary4to1
+    {
+        type            processor;
+        value           uniform 0;
+    }
+    procBoundary4to3
     {
         type            processor;
         value           uniform 0;
     }
     procBoundary4to5
+    {
+        type            processor;
+        value           uniform 0;
+    }
+    procBoundary4to6
     {
         type            processor;
         value           uniform 0;
