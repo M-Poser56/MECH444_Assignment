@@ -47,7 +47,12 @@ boundaryField
     {
         type            zeroGradient;
     }
-    procBoundary6to4
+    procBoundary6to0
+    {
+        type            processor;
+        value           uniform (14 0 0);
+    }
+    procBoundary6to1
     {
         type            processor;
         value           uniform (14 0 0);

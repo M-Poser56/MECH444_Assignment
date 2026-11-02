@@ -24,12 +24,12 @@ label2 = "Coefficient of Downforce (Cl)"
 # ---------------------------------------------------------------------------
 # PLOT SETTINGS
 # ---------------------------------------------------------------------------
-title = "Mesh Sensitivity Analysis\n Cd & Cl vs. Mesh Configurations"
+title = "Domain Sensitivity Analysis\n Cd & Cl vs. Domain Configurations"
 xlabel = "Mesh Configuration"
 ylabel = "Coefficient Value (Dimensionless)"
 
 color1 = "#2a78d6"   # blue
-color2 = "#eb34c3"   # magenta
+color2 = "#eb34c3"   # pink
 
 x_offset = 0.00       # horizontal nudge so overlapping error bars stay readable (0 to disable)
 

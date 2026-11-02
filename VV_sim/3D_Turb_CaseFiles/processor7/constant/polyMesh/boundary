@@ -16,57 +16,57 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-13
+12
 (
     body
     {
         type            wall;
         physicalType    patch;
         inGroups        1(wall);
-        nFaces          4065;
-        startFace       61511;
+        nFaces          1836;
+        startFace       27057;
     }
     inlet
     {
         type            patch;
         physicalType    patch;
         nFaces          0;
-        startFace       65576;
+        startFace       28893;
     }
     sides
     {
         type            patch;
         physicalType    patch;
         nFaces          0;
-        startFace       65576;
+        startFace       28893;
     }
     top
     {
         type            patch;
         physicalType    patch;
         nFaces          0;
-        startFace       65576;
+        startFace       28893;
     }
     bottom
     {
         type            patch;
         physicalType    patch;
-        nFaces          435;
-        startFace       65576;
+        nFaces          136;
+        startFace       28893;
     }
     outlet
     {
         type            patch;
         physicalType    patch;
         nFaces          0;
-        startFace       66011;
+        startFace       29029;
     }
     procBoundary7to0
     {
         type            processor;
         inGroups        1(processor);
-        nFaces          17;
-        startFace       66011;
+        nFaces          39;
+        startFace       29029;
         matchTolerance  0.0001;
         transform       unknown;
         myProcNo        7;
@@ -76,8 +76,8 @@ FoamFile
     {
         type            processor;
         inGroups        1(processor);
-        nFaces          15;
-        startFace       66028;
+        nFaces          24;
+        startFace       29068;
         matchTolerance  0.0001;
         transform       unknown;
         myProcNo        7;
@@ -87,30 +87,19 @@ FoamFile
     {
         type            processor;
         inGroups        1(processor);
-        nFaces          1;
-        startFace       66043;
+        nFaces          6;
+        startFace       29092;
         matchTolerance  0.0001;
         transform       unknown;
         myProcNo        7;
         neighbProcNo    2;
     }
-    procBoundary7to3
-    {
-        type            processor;
-        inGroups        1(processor);
-        nFaces          102;
-        startFace       66044;
-        matchTolerance  0.0001;
-        transform       unknown;
-        myProcNo        7;
-        neighbProcNo    3;
-    }
     procBoundary7to4
     {
         type            processor;
         inGroups        1(processor);
-        nFaces          447;
-        startFace       66146;
+        nFaces          403;
+        startFace       29098;
         matchTolerance  0.0001;
         transform       unknown;
         myProcNo        7;
@@ -120,8 +109,8 @@ FoamFile
     {
         type            processor;
         inGroups        1(processor);
-        nFaces          26;
-        startFace       66593;
+        nFaces          161;
+        startFace       29501;
         matchTolerance  0.0001;
         transform       unknown;
         myProcNo        7;
@@ -131,8 +120,8 @@ FoamFile
     {
         type            processor;
         inGroups        1(processor);
-        nFaces          610;
-        startFace       66619;
+        nFaces          465;
+        startFace       29662;
         matchTolerance  0.0001;
         transform       unknown;
         myProcNo        7;

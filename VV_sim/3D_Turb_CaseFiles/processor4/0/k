@@ -25,12 +25,12 @@ boundaryField
     body
     {
         type            kqRWallFunction;
-        value           nonuniform List<scalar> 0;
+        value           uniform 0.0294;
     }
     inlet
     {
         type            fixedValue;
-        value           uniform 0.0294;
+        value           nonuniform List<scalar> 0;
     }
     sides
     {
@@ -53,22 +53,12 @@ boundaryField
         type            processor;
         value           uniform 0.0294;
     }
-    procBoundary4to1
-    {
-        type            processor;
-        value           uniform 0.0294;
-    }
-    procBoundary4to3
+    procBoundary4to2
     {
         type            processor;
         value           uniform 0.0294;
     }
     procBoundary4to5
-    {
-        type            processor;
-        value           uniform 0.0294;
-    }
-    procBoundary4to6
     {
         type            processor;
         value           uniform 0.0294;
