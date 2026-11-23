@@ -25,12 +25,12 @@ boundaryField
     body
     {
         type            epsilonWallFunction;
-        value           uniform 5.19;
+        value           nonuniform List<scalar> 0;
     }
     inlet
     {
         type            fixedValue;
-        value           nonuniform List<scalar> 0;
+        value           uniform 5.19;
     }
     sides
     {
@@ -68,12 +68,12 @@ boundaryField
         type            processor;
         value           uniform 5.19;
     }
-    procBoundary0to6
+    procBoundary0to5
     {
         type            processor;
         value           uniform 5.19;
     }
-    procBoundary0to7
+    procBoundary0to6
     {
         type            processor;
         value           uniform 5.19;

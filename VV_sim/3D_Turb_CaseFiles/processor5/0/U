@@ -47,12 +47,22 @@ boundaryField
     {
         type            zeroGradient;
     }
+    procBoundary5to0
+    {
+        type            processor;
+        value           uniform (14 0 0);
+    }
     procBoundary5to1
     {
         type            processor;
         value           uniform (14 0 0);
     }
     procBoundary5to2
+    {
+        type            processor;
+        value           uniform (14 0 0);
+    }
+    procBoundary5to3
     {
         type            processor;
         value           uniform (14 0 0);

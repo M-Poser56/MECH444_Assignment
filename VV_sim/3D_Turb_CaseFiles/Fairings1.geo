@@ -1,6 +1,6 @@
 SetFactory("OpenCASCADE");
 Geometry.OCCTargetUnit = "M"; // Convert mm to m
-body() = ShapeFromFile("FluidsProject_5.step");
+body() = ShapeFromFile("CFDV1.STEP");
 
 L = 1.34;  //characteristic length, bumper width for 1.0 fairings model
 
@@ -60,7 +60,7 @@ Field[1].Sampling = 100;
 
 Field[2] = Threshold;
 Field[2].InField = 1;
-Field[2].SizeMin = 0.03*L; //alter size to reduce cells
+Field[2].SizeMin = 0.0225*L; //alter size to reduce cells
 Field[2].SizeMax = 0.6*L;
 Field[2].DistMin = 0.02*L;
 Field[2].DistMax = 4*L;
@@ -83,7 +83,7 @@ Field[5].Sampling = 200;
 
 Field[6] = Threshold;
 Field[6].InField = 5;
-Field[6].SizeMin = 0.015;
+Field[6].SizeMin = 0.006;
 Field[6].SizeMax = 0.03*L;
 Field[6].DistMin = 0.005;
 Field[6].DistMax = 0.10;

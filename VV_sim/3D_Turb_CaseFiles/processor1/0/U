@@ -29,7 +29,7 @@ boundaryField
     inlet
     {
         type            fixedValue;
-        value           uniform (14 0 0);
+        value           nonuniform List<vector> 0;
     }
     sides
     {
@@ -62,12 +62,12 @@ boundaryField
         type            processor;
         value           uniform (14 0 0);
     }
-    procBoundary1to5
+    procBoundary1to4
     {
         type            processor;
         value           uniform (14 0 0);
     }
-    procBoundary1to6
+    procBoundary1to5
     {
         type            processor;
         value           uniform (14 0 0);

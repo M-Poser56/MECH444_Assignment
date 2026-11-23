@@ -30,7 +30,7 @@ boundaryField
     inlet
     {
         type            fixedValue;
-        value           uniform 1.5e-05;
+        value           nonuniform List<scalar> 0;
     }
     sides
     {
@@ -63,12 +63,12 @@ boundaryField
         type            processor;
         value           uniform 1.5e-05;
     }
-    procBoundary1to5
+    procBoundary1to4
     {
         type            processor;
         value           uniform 1.5e-05;
     }
-    procBoundary1to6
+    procBoundary1to5
     {
         type            processor;
         value           uniform 1.5e-05;
