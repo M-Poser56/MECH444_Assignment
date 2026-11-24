@@ -1,6 +1,6 @@
 SetFactory("OpenCASCADE");
 Geometry.OCCTargetUnit = "M"; // Convert mm to m
-body() = ShapeFromFile("CFDV1.STEP");
+body() = ShapeFromFile("CFDV2_BumperEdits.step");
 
 L = 1.34;  //characteristic length, bumper width for 1.0 fairings model
 

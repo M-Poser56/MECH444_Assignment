@@ -39,7 +39,7 @@ boundaryField
     top
     {
         type            calculated;
-        value           uniform 0;
+        value           nonuniform List<scalar> 0;
     }
     bottom
     {
@@ -49,7 +49,7 @@ boundaryField
     outlet
     {
         type            calculated;
-        value           uniform 0;
+        value           nonuniform List<scalar> 0;
     }
     procBoundary2to0
     {
@@ -62,21 +62,6 @@ boundaryField
         value           uniform 0;
     }
     procBoundary2to3
-    {
-        type            processor;
-        value           uniform 0;
-    }
-    procBoundary2to5
-    {
-        type            processor;
-        value           uniform 0;
-    }
-    procBoundary2to6
-    {
-        type            processor;
-        value           uniform 0;
-    }
-    procBoundary2to7
     {
         type            processor;
         value           uniform 0;

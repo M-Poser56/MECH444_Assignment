@@ -16,90 +16,79 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-11
+10
 (
     body
     {
         type            wall;
         physicalType    patch;
         inGroups        1(wall);
-        nFaces          4593;
-        startFace       27741;
+        nFaces          6698;
+        startFace       77502;
     }
     inlet
     {
         type            patch;
         physicalType    patch;
         nFaces          0;
-        startFace       32334;
+        startFace       84200;
     }
     sides
     {
         type            patch;
         physicalType    patch;
         nFaces          0;
-        startFace       32334;
+        startFace       84200;
     }
     top
     {
         type            patch;
         physicalType    patch;
         nFaces          0;
-        startFace       32334;
+        startFace       84200;
     }
     bottom
     {
         type            patch;
         physicalType    patch;
-        nFaces          330;
-        startFace       32334;
+        nFaces          325;
+        startFace       84200;
     }
     outlet
     {
         type            patch;
         physicalType    patch;
         nFaces          0;
-        startFace       32664;
+        startFace       84525;
     }
     procBoundary6to0
     {
         type            processor;
         inGroups        1(processor);
-        nFaces          219;
-        startFace       32664;
+        nFaces          344;
+        startFace       84525;
         matchTolerance  0.0001;
         transform       unknown;
         myProcNo        6;
         neighbProcNo    0;
     }
-    procBoundary6to2
+    procBoundary6to3
     {
         type            processor;
         inGroups        1(processor);
-        nFaces          68;
-        startFace       32883;
+        nFaces          81;
+        startFace       84869;
         matchTolerance  0.0001;
         transform       unknown;
         myProcNo        6;
-        neighbProcNo    2;
-    }
-    procBoundary6to4
-    {
-        type            processor;
-        inGroups        1(processor);
-        nFaces          21;
-        startFace       32951;
-        matchTolerance  0.0001;
-        transform       unknown;
-        myProcNo        6;
-        neighbProcNo    4;
+        neighbProcNo    3;
     }
     procBoundary6to5
     {
         type            processor;
         inGroups        1(processor);
-        nFaces          65;
-        startFace       32972;
+        nFaces          50;
+        startFace       84950;
         matchTolerance  0.0001;
         transform       unknown;
         myProcNo        6;
@@ -109,8 +98,8 @@ FoamFile
     {
         type            processor;
         inGroups        1(processor);
-        nFaces          418;
-        startFace       33037;
+        nFaces          802;
+        startFace       85000;
         matchTolerance  0.0001;
         transform       unknown;
         myProcNo        6;

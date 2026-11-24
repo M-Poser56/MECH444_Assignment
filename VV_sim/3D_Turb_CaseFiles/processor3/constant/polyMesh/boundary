@@ -23,72 +23,61 @@ FoamFile
         type            wall;
         physicalType    patch;
         inGroups        1(wall);
-        nFaces          2032;
-        startFace       28989;
+        nFaces          6417;
+        startFace       77741;
     }
     inlet
     {
         type            patch;
         physicalType    patch;
         nFaces          0;
-        startFace       31021;
+        startFace       84158;
     }
     sides
     {
         type            patch;
         physicalType    patch;
         nFaces          0;
-        startFace       31021;
+        startFace       84158;
     }
     top
     {
         type            patch;
         physicalType    patch;
         nFaces          0;
-        startFace       31021;
+        startFace       84158;
     }
     bottom
     {
         type            patch;
         physicalType    patch;
-        nFaces          192;
-        startFace       31021;
+        nFaces          474;
+        startFace       84158;
     }
     outlet
     {
         type            patch;
         physicalType    patch;
         nFaces          0;
-        startFace       31213;
+        startFace       84632;
     }
     procBoundary3to0
     {
         type            processor;
         inGroups        1(processor);
-        nFaces          19;
-        startFace       31213;
+        nFaces          421;
+        startFace       84632;
         matchTolerance  0.0001;
         transform       unknown;
         myProcNo        3;
         neighbProcNo    0;
     }
-    procBoundary3to1
-    {
-        type            processor;
-        inGroups        1(processor);
-        nFaces          423;
-        startFace       31232;
-        matchTolerance  0.0001;
-        transform       unknown;
-        myProcNo        3;
-        neighbProcNo    1;
-    }
     procBoundary3to2
     {
         type            processor;
         inGroups        1(processor);
-        nFaces          521;
-        startFace       31655;
+        nFaces          724;
+        startFace       85053;
         matchTolerance  0.0001;
         transform       unknown;
         myProcNo        3;
@@ -98,19 +87,30 @@ FoamFile
     {
         type            processor;
         inGroups        1(processor);
-        nFaces          17;
-        startFace       32176;
+        nFaces          5;
+        startFace       85777;
         matchTolerance  0.0001;
         transform       unknown;
         myProcNo        3;
         neighbProcNo    5;
     }
+    procBoundary3to6
+    {
+        type            processor;
+        inGroups        1(processor);
+        nFaces          81;
+        startFace       85782;
+        matchTolerance  0.0001;
+        transform       unknown;
+        myProcNo        3;
+        neighbProcNo    6;
+    }
     procBoundary3to7
     {
         type            processor;
         inGroups        1(processor);
-        nFaces          14;
-        startFace       32193;
+        nFaces          4;
+        startFace       85863;
         matchTolerance  0.0001;
         transform       unknown;
         myProcNo        3;
